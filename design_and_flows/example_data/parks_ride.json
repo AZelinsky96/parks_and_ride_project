@@ -1,0 +1,890 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "nvxe-b625",
+      "name" : "Thruway Commuter Park and Ride Lots",
+      "assetType" : "dataset",
+      "attribution" : "New York State Thruway Authority",
+      "attributionLink" : "http://www.thruway.ny.gov/travelers/interchanges/commuter-lots.html",
+      "averageRating" : 0,
+      "category" : "Transportation",
+      "createdAt" : 1361893803,
+      "description" : "The Commuter Park and Ride Lots Listing provides travelers along the Thruway System with a listing of available locations in which to park their vehicle and commute from. The csv file contains the latitude and longitude, title of lot, location, lot owner, available parking, lighting and pavement conditions.",
+      "displayType" : "table",
+      "downloadCount" : 1423,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1568731518,
+      "newBackend" : true,
+      "numberOfComments" : 0,
+      "oid" : 32398128,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1568746701,
+      "publicationGroup" : 701065,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1568671265,
+      "rowsUpdatedBy" : "xzik-pf59",
+      "tableId" : 16542066,
+      "totalTimesRated" : 0,
+      "viewCount" : 15437,
+      "viewLastModified" : 1568746701,
+      "viewType" : "tabular",
+      "approvals" : [ {
+        "reviewedAt" : 1568752758,
+        "reviewedAutomatically" : true,
+        "state" : "approved",
+        "submissionId" : 1219543,
+        "submissionObject" : "public_audience_request",
+        "submissionOutcome" : "change_audience",
+        "submittedAt" : 1568752758,
+        "workflowId" : 2254,
+        "submissionDetails" : {
+          "permissionType" : "READ"
+        },
+        "submissionOutcomeApplication" : {
+          "endedAt" : 1568752758,
+          "failureCount" : 0,
+          "startedAt" : 1568752758,
+          "status" : "success"
+        },
+        "submitter" : {
+          "id" : "wuc5-gu64",
+          "displayName" : "Andrew S Deming"
+        }
+      } ],
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 428577271,
+        "name" : "Title",
+        "dataTypeName" : "text",
+        "description" : "The name of the Commuter Park and Ride Lot.",
+        "fieldName" : "title",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 8180938,
+        "width" : 160,
+        "cachedContents" : {
+          "largest" : "Williamsville",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Manchester",
+            "count" : "1"
+          }, {
+            "item" : "Saugerties",
+            "count" : "1"
+          }, {
+            "item" : "Little Falls",
+            "count" : "1"
+          }, {
+            "item" : "Verona",
+            "count" : "1"
+          }, {
+            "item" : "Liverpool",
+            "count" : "1"
+          }, {
+            "item" : "Kingston",
+            "count" : "1"
+          }, {
+            "item" : "Amsterdam",
+            "count" : "1"
+          }, {
+            "item" : "Westmoreland",
+            "count" : "1"
+          }, {
+            "item" : "Canastota",
+            "count" : "1"
+          }, {
+            "item" : "Depew",
+            "count" : "1"
+          }, {
+            "item" : "Syracuse (State Fair)",
+            "count" : "1"
+          }, {
+            "item" : "Williamsville",
+            "count" : "1"
+          }, {
+            "item" : "Spring Valley (West Lot)",
+            "count" : "1"
+          }, {
+            "item" : "LeRoy",
+            "count" : "1"
+          }, {
+            "item" : "Collamer",
+            "count" : "1"
+          }, {
+            "item" : "Canandaigua",
+            "count" : "1"
+          }, {
+            "item" : "Catskill",
+            "count" : "1"
+          }, {
+            "item" : "Utica",
+            "count" : "1"
+          }, {
+            "item" : "West Nyack (Lot 1)",
+            "count" : "1"
+          }, {
+            "item" : "Geneva",
+            "count" : "1"
+          } ],
+          "smallest" : "Amsterdam",
+          "cardinality" : "31"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 428577272,
+        "name" : "Exit",
+        "dataTypeName" : "text",
+        "description" : "Exitid – the interchange at which the Commuter Park and Ride Lot is located.",
+        "fieldName" : "exit",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 8180939,
+        "width" : 50,
+        "cachedContents" : {
+          "largest" : "B1",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "14",
+            "count" : "3"
+          }, {
+            "item" : "12",
+            "count" : "2"
+          }, {
+            "item" : "48A",
+            "count" : "1"
+          }, {
+            "item" : "17",
+            "count" : "1"
+          }, {
+            "item" : "33",
+            "count" : "1"
+          }, {
+            "item" : "40",
+            "count" : "1"
+          }, {
+            "item" : "50",
+            "count" : "1"
+          }, {
+            "item" : "19",
+            "count" : "1"
+          }, {
+            "item" : "38",
+            "count" : "1"
+          }, {
+            "item" : "49",
+            "count" : "1"
+          }, {
+            "item" : "36",
+            "count" : "1"
+          }, {
+            "item" : "34",
+            "count" : "1"
+          }, {
+            "item" : "27",
+            "count" : "1"
+          }, {
+            "item" : "26",
+            "count" : "1"
+          }, {
+            "item" : "44",
+            "count" : "1"
+          }, {
+            "item" : "43",
+            "count" : "1"
+          }, {
+            "item" : "29A",
+            "count" : "1"
+          }, {
+            "item" : "39",
+            "count" : "1"
+          }, {
+            "item" : "47",
+            "count" : "1"
+          }, {
+            "item" : "32",
+            "count" : "1"
+          } ],
+          "smallest" : "12",
+          "cardinality" : "28"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 428577273,
+        "name" : "Run By",
+        "dataTypeName" : "text",
+        "description" : "The name of the organization that runs/owns the lot.",
+        "fieldName" : "run_by",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 8180940,
+        "width" : 227,
+        "cachedContents" : {
+          "largest" : "Palisades Center",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "NYS Thruway Authority",
+            "count" : "15"
+          }, {
+            "item" : "NYS Department of Transportation",
+            "count" : "11"
+          }, {
+            "item" : "NYS Department of Transportation and Town of Clarkstown",
+            "count" : "3"
+          }, {
+            "item" : "Palisades Center",
+            "count" : "1"
+          }, {
+            "item" : "Niagara Frontier Transportation Authority",
+            "count" : "1"
+          } ],
+          "smallest" : "Niagara Frontier Transportation Authority",
+          "cardinality" : "5"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 428577274,
+        "name" : "Spaces",
+        "dataTypeName" : "number",
+        "description" : "The number of parking spaces available.",
+        "fieldName" : "spaces",
+        "position" : 4,
+        "renderTypeName" : "number",
+        "tableColumnId" : 8180941,
+        "width" : 57,
+        "cachedContents" : {
+          "largest" : "900",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "50",
+            "count" : "5"
+          }, {
+            "item" : "36",
+            "count" : "2"
+          }, {
+            "item" : "24",
+            "count" : "2"
+          }, {
+            "item" : "289",
+            "count" : "1"
+          }, {
+            "item" : "6",
+            "count" : "1"
+          }, {
+            "item" : "150",
+            "count" : "1"
+          }, {
+            "item" : "80",
+            "count" : "1"
+          }, {
+            "item" : "232",
+            "count" : "1"
+          }, {
+            "item" : "60",
+            "count" : "1"
+          }, {
+            "item" : "236",
+            "count" : "1"
+          }, {
+            "item" : "92",
+            "count" : "1"
+          }, {
+            "item" : "12",
+            "count" : "1"
+          }, {
+            "item" : "43",
+            "count" : "1"
+          }, {
+            "item" : "40",
+            "count" : "1"
+          }, {
+            "item" : "94",
+            "count" : "1"
+          }, {
+            "item" : "28",
+            "count" : "1"
+          }, {
+            "item" : "17",
+            "count" : "1"
+          }, {
+            "item" : "188",
+            "count" : "1"
+          }, {
+            "item" : "91",
+            "count" : "1"
+          }, {
+            "item" : "98",
+            "count" : "1"
+          } ],
+          "smallest" : "6",
+          "cardinality" : "25"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 428577275,
+        "name" : "Paved",
+        "dataTypeName" : "text",
+        "description" : "Whether the lot is paved or not.",
+        "fieldName" : "paved",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 8180942,
+        "width" : 55,
+        "cachedContents" : {
+          "largest" : "Yes",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Yes",
+            "count" : "30"
+          }, {
+            "item" : "No",
+            "count" : "1"
+          } ],
+          "smallest" : "No",
+          "cardinality" : "2"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 428577276,
+        "name" : "Lighted",
+        "dataTypeName" : "text",
+        "description" : "Whether the lot has lighting or not.",
+        "fieldName" : "lighted",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 8180943,
+        "width" : 142,
+        "cachedContents" : {
+          "largest" : "Yes",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Yes",
+            "count" : "23"
+          }, {
+            "item" : "No",
+            "count" : "7"
+          }, {
+            "item" : "Highmast lighting nearby",
+            "count" : "1"
+          } ],
+          "smallest" : "Highmast lighting nearby",
+          "cardinality" : "3"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 428577277,
+        "name" : "Comments",
+        "dataTypeName" : "text",
+        "description" : "Lists where the Commuter Park and Ride Lots are located.",
+        "fieldName" : "comments",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 8180944,
+        "width" : 555,
+        "cachedContents" : {
+          "largest" : "Located on the South Side of Rt. 299 at the New Paltz Toll Plaza. (16-hour Parking Limit)",
+          "non_null" : "30",
+          "null" : "1",
+          "top" : [ {
+            "item" : "16-hour Parking Limit",
+            "count" : "15"
+          }, {
+            "item" : "Located at the South Side of Rt. 59 at NYSTA Exit 14",
+            "count" : "2"
+          }, {
+            "item" : "Located at the North Side of Rt. 59 at NYSTA Exit 14",
+            "count" : "1"
+          }, {
+            "item" : "1-Hour Parking Limit",
+            "count" : "1"
+          }, {
+            "item" : "Located in the Village of Williamsville.  1.5 miles from I-90 - Exit 50. Directions: Exit 50 to I-290 West to Exit 7B, Route 5 East.  Turn right (Approx. 1/2 mile) at 3rd light to Union Road (Route 277). The lot is on the right.",
+            "count" : "1"
+          }, {
+            "item" : "Located on Rt. 14.  Parking lot is unlined.",
+            "count" : "1"
+          }, {
+            "item" : "Located off Routes 32 and 212",
+            "count" : "1"
+          }, {
+            "item" : "Located 1.5 Miles south on Route 9",
+            "count" : "1"
+          }, {
+            "item" : "Located on I-490 E - Exit 1; 0.2 miles.  Trailways, shelter and pay phone.",
+            "count" : "1"
+          }, {
+            "item" : "Located off Route 5",
+            "count" : "1"
+          }, {
+            "item" : "Located off Route 587",
+            "count" : "1"
+          }, {
+            "item" : "Located at the NE Corner of Rt. 59 and Rt. 303",
+            "count" : "1"
+          }, {
+            "item" : "Located on Rt. 17K at Union Avenue at the Short Line Bus Station.",
+            "count" : "1"
+          }, {
+            "item" : "Located on Palisades Center Ring Road",
+            "count" : "1"
+          }, {
+            "item" : "Located on the South Side of Rt. 299 at the New Paltz Toll Plaza. (16-hour Parking Limit)",
+            "count" : "1"
+          } ],
+          "smallest" : "16-hour Parking Limit",
+          "cardinality" : "15"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 428577278,
+        "name" : "Latitude",
+        "dataTypeName" : "number",
+        "description" : "Describes the Latitude of the Commuter Park and Ride Lot.",
+        "fieldName" : "latitude",
+        "position" : 8,
+        "renderTypeName" : "number",
+        "tableColumnId" : 8180945,
+        "width" : 67,
+        "cachedContents" : {
+          "largest" : "43.12045",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "42.97686",
+            "count" : "1"
+          }, {
+            "item" : "43.11427",
+            "count" : "1"
+          }, {
+            "item" : "43.0986",
+            "count" : "1"
+          }, {
+            "item" : "43.00266",
+            "count" : "1"
+          }, {
+            "item" : "43.0333",
+            "count" : "1"
+          }, {
+            "item" : "42.92455",
+            "count" : "1"
+          }, {
+            "item" : "41.10343",
+            "count" : "1"
+          }, {
+            "item" : "41.09968",
+            "count" : "1"
+          }, {
+            "item" : "43.1109",
+            "count" : "1"
+          }, {
+            "item" : "41.10358",
+            "count" : "1"
+          }, {
+            "item" : "42.8532",
+            "count" : "1"
+          }, {
+            "item" : "43.11213",
+            "count" : "1"
+          }, {
+            "item" : "43.09531",
+            "count" : "1"
+          }, {
+            "item" : "43.08893",
+            "count" : "1"
+          }, {
+            "item" : "42.98765",
+            "count" : "1"
+          }, {
+            "item" : "42.96059",
+            "count" : "1"
+          }, {
+            "item" : "41.50568",
+            "count" : "1"
+          }, {
+            "item" : "42.47574",
+            "count" : "1"
+          }, {
+            "item" : "43.12045",
+            "count" : "1"
+          }, {
+            "item" : "42.94651",
+            "count" : "1"
+          } ],
+          "smallest" : "41.09436",
+          "cardinality" : "31"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 428577279,
+        "name" : "Longitude",
+        "dataTypeName" : "number",
+        "description" : "Describes the Longitude of the Commuter Park and Ride Lot.",
+        "fieldName" : "longitude",
+        "position" : 9,
+        "renderTypeName" : "number",
+        "tableColumnId" : 8180946,
+        "width" : 73,
+        "cachedContents" : {
+          "largest" : "-73.68258",
+          "non_null" : "31",
+          "null" : "0",
+          "top" : [ {
+            "item" : "-76.16428",
+            "count" : "1"
+          }, {
+            "item" : "-74.81862",
+            "count" : "1"
+          }, {
+            "item" : "-74.02896",
+            "count" : "1"
+          }, {
+            "item" : "-76.21399",
+            "count" : "1"
+          }, {
+            "item" : "-76.55943",
+            "count" : "1"
+          }, {
+            "item" : "-74.02979",
+            "count" : "1"
+          }, {
+            "item" : "-74.99466",
+            "count" : "1"
+          }, {
+            "item" : "-75.40194",
+            "count" : "1"
+          }, {
+            "item" : "-73.68258",
+            "count" : "1"
+          }, {
+            "item" : "-73.96232",
+            "count" : "1"
+          }, {
+            "item" : "-73.94979",
+            "count" : "1"
+          }, {
+            "item" : "-74.06242",
+            "count" : "1"
+          }, {
+            "item" : "-74.03072",
+            "count" : "1"
+          }, {
+            "item" : "-73.97564",
+            "count" : "1"
+          }, {
+            "item" : "-74.00697",
+            "count" : "1"
+          }, {
+            "item" : "-78.40682",
+            "count" : "1"
+          }, {
+            "item" : "-74.02749",
+            "count" : "1"
+          }, {
+            "item" : "-75.74949",
+            "count" : "1"
+          }, {
+            "item" : "-76.97677",
+            "count" : "1"
+          }, {
+            "item" : "-76.29029",
+            "count" : "1"
+          } ],
+          "smallest" : "-78.75582",
+          "cardinality" : "31"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 428577280,
+        "name" : "Location",
+        "dataTypeName" : "location",
+        "fieldName" : "location",
+        "position" : 10,
+        "renderTypeName" : "location",
+        "tableColumnId" : 8180947,
+        "width" : 150,
+        "format" : { },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      }, {
+        "id" : 428577285,
+        "name" : "NYS Municipal Boundaries",
+        "dataTypeName" : "number",
+        "fieldName" : ":@computed_region_yamh_8v7k",
+        "position" : 15,
+        "renderTypeName" : "number",
+        "tableColumnId" : 68099003,
+        "computationStrategy" : {
+          "source_columns" : [ "location" ],
+          "type" : "georegion_match_on_point",
+          "parameters" : {
+            "region" : "_yamh-8v7k",
+            "primary_key" : "_feature_id"
+          }
+        },
+        "format" : { }
+      }, {
+        "id" : 428577286,
+        "name" : "New York Zip Codes",
+        "dataTypeName" : "number",
+        "fieldName" : ":@computed_region_wbg7_3whc",
+        "position" : 16,
+        "renderTypeName" : "number",
+        "tableColumnId" : 68099004,
+        "computationStrategy" : {
+          "source_columns" : [ "location" ],
+          "type" : "georegion_match_on_point",
+          "parameters" : {
+            "region" : "_wbg7-3whc",
+            "primary_key" : "_feature_id"
+          }
+        },
+        "format" : { }
+      }, {
+        "id" : 428577287,
+        "name" : "Counties",
+        "dataTypeName" : "number",
+        "fieldName" : ":@computed_region_kjdx_g34t",
+        "position" : 17,
+        "renderTypeName" : "number",
+        "tableColumnId" : 68099005,
+        "computationStrategy" : {
+          "source_columns" : [ "location" ],
+          "type" : "georegion_match_on_point",
+          "parameters" : {
+            "region" : "_kjdx-g34t",
+            "primary_key" : "_feature_id"
+          }
+        },
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "rdfSubject" : "0",
+        "attachments" : [ {
+          "filename" : "NYSTA_CommuterLots_Overview.pdf",
+          "blobId" : "E0C23E8D-5AAA-4992-A541-43502583737D",
+          "name" : "NYSTA_CommuterLots_Overview.pdf"
+        }, {
+          "filename" : "Commuter-Lots-Data-Dictionary.pdf",
+          "blobId" : "83EBA8C9-6D01-4B26-BAAC-0CABFBFBFC7B",
+          "name" : "NYSTA_CommuterLots_DataDictionary.pdf"
+        } ],
+        "custom_fields" : {
+          "Dataset Summary" : {
+            "Posting Frequency" : "As needed",
+            "Organization" : "Department of Maintenance and Operations",
+            "Contact Information" : "webmaster@thruway.ny.gov",
+            "Time Period" : "Present",
+            "Coverage" : "Statewide",
+            "Granularity" : "Facility",
+            "Units" : "Commuter Lots",
+            "Dataset Owner" : "Department of Maintenance and Operations",
+            "Data Frequency" : "As Needed"
+          },
+          "Common Core" : {
+            "Contact Email" : "opendata@its.ny.gov",
+            "Contact Name" : "Open Data NY",
+            "Publisher" : "State of New York"
+          },
+          "Additional Resources" : {
+            "See Also   " : "",
+            "See Also       " : "",
+            "See Also         " : "",
+            "See Also " : "",
+            "See Also        " : "",
+            "See Also  " : "",
+            "See Also    " : "",
+            "See Also" : "http://www.thruway.ny.gov/travelers/map/index.html?layer=parkride",
+            "See Also      " : "",
+            "See Also     " : ""
+          },
+          "Disclaimers" : {
+            "Limitations" : "Thruway Authority commuter lots are posted for a maximum stay of 16 hours and are not designed for multiple day stays.",
+            "Disclaimer" : ""
+          },
+          "Notes" : {
+            "Notes" : ""
+          },
+          "Dataset Information" : {
+            "Localities" : "",
+            "Agency" : "Thruway Authority"
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        }
+      },
+      "owner" : {
+        "id" : "xzik-pf59",
+        "displayName" : "NY Open Data",
+        "profileImageUrlLarge" : "/api/users/xzik-pf59/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/xzik-pf59/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/xzik-pf59/profile_images/TINY",
+        "screenName" : "NY Open Data",
+        "type" : "interactive",
+        "flags" : [ "mayBeStoriesCoOwner" ]
+      },
+      "query" : {
+        "orderBys" : [ {
+          "ascending" : true,
+          "expression" : {
+            "columnId" : 428577276,
+            "type" : "column"
+          }
+        } ]
+      },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "mwxm-zess",
+        "displayName" : "Lindsey Krough",
+        "profileImageUrlLarge" : "/api/users/mwxm-zess/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/mwxm-zess/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/mwxm-zess/profile_images/TINY",
+        "screenName" : "Lindsey Krough",
+        "type" : "interactive"
+      },
+      "tags" : [ "commuter lots", "park and ride" ],
+      "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType", "unsaved" ]
+    }
+  },
+  "data" : [ [ "row-g6f4~udxd.u5wn", "00000000-0000-0000-4A2E-0D86A3E1DA01", 0, 1568671265, null, 1568671293, null, "{ }", "West Nyack (Lot 1)", "12", "NYS Department of Transportation", "232", "Yes", "Yes", "Located at the NE Corner of Rt. 59 and Rt. 303", "41.09436", "-73.94979", [ null, "41.09436", "-73.94979", null, false ], "532", "856", "628" ]
+, [ "row-5hn9~4jcm_r4e3", "00000000-0000-0000-9D35-D1BA89F46EA9", 0, 1568671265, null, 1568671293, null, "{ }", "West Nyack (Lot J)", "12", "Palisades Center", "900", "Yes", "Yes", "Located on Palisades Center Ring Road", "41.09968", "-73.96232", [ null, "41.09968", "-73.96232", null, false ], "532", "856", "628" ]
+, [ "row-v2zw~4p7z-metj", "00000000-0000-0000-9AD3-2EDFA7FE8A8E", 0, 1568671265, null, 1568671293, null, "{ }", "Spring Valley (East Lot)", "14", "NYS Department of Transportation and Town of Clarkstown", "188", "Yes", "Yes", "Located at the South Side of Rt. 59 at NYSTA Exit 14", "41.10289", "-74.02979", [ null, "41.10289", "-74.02979", null, false ], "532", "1545", "628" ]
+, [ "row-fn83.32nc~45xk", "00000000-0000-0000-F720-1CC2050BD2E5", 0, 1568671265, null, 1568671293, null, "{ }", "Spring Valley (North Lot)", "14", "NYS Department of Transportation and Town of Clarkstown", "390", "Yes", "Yes", "Located at the North Side of Rt. 59 at NYSTA Exit 14", "41.10358", "-74.02896", [ null, "41.10358", "-74.02896", null, false ], "532", "1560", "628" ]
+, [ "row-wxts~jxht-wjwq", "00000000-0000-0000-A4DC-CC7B01A78382", 0, 1568671265, null, 1568671293, null, "{ }", "Spring Valley (West Lot)", "14", "NYS Department of Transportation and Town of Clarkstown", "80", "Yes", "Yes", "Located at the South Side of Rt. 59 at NYSTA Exit 14", "41.10343", "-74.03072", [ null, "41.10343", "-74.03072", null, false ], "532", "1545", "628" ]
+, [ "row-kkhh-bzmj_x83q", "00000000-0000-0000-A1C0-3D339C01A7B6", 0, 1568671265, null, 1568671293, null, "{ }", "Newburgh", "17", "NYS Department of Transportation", "289", "Yes", "Yes", "Located on Rt. 17K at Union Avenue at the Short Line Bus Station.", "41.50568", "-74.06309", [ null, "41.50568", "-74.06309", null, false ], "890", "987", "2134" ]
+, [ "row-znpb~nqui_s5cz", "00000000-0000-0000-13BC-45C14C2488C1", 0, 1568671265, null, 1568671293, null, "{ }", "New Paltz", "18", "NYS Thruway Authority", "150", "Yes", "Yes", "Located on the South Side of Rt. 299 at the New Paltz Toll Plaza. (16-hour Parking Limit)", "41.74027", "-74.06242", [ null, "41.74027", "-74.06242", null, false ], "416", "989", "2182" ]
+, [ "row-p967~e2gg-thj5", "00000000-0000-0000-D89E-6C596061D7F0", 0, 1568671265, null, 1568671293, null, "{ }", "Kingston", "19", "NYS Department of Transportation", "236", "Yes", "Yes", "Located off Route 587", "41.94275", "-74.02749", [ null, "41.94275", "-74.02749", null, false ], "408", "79", "2182" ]
+, [ "row-3bsm~67d6-t4qm", "00000000-0000-0000-677C-C4DAE9D95C8D", 0, 1568671265, null, 1568671293, null, "{ }", "Saugerties", "20", "NYS Department of Transportation", "43", "Yes", "Yes", "Located off Routes 32 and 212", "42.08614", "-73.97564", [ null, "42.08614", "-73.97564", null, false ], "411", "330", "2182" ]
+, [ "row-egf9-q5ya-ftiq", "00000000-0000-0000-8A98-13752DFF0AD4", 0, 1568671265, null, 1568671293, null, "{ }", "Catskill", "21", "NYS Thruway Authority", "98", "Yes", "Yes", "16-hour Parking Limit", "42.24651", "-73.88515", [ null, "42.24651", "-73.88515", null, false ], "760", "89", "2087" ]
+, [ "row-e7as_iuqq.57jm", "00000000-0000-0000-0976-BD193C5F0E99", 0, 1568671265, null, 1568671293, null, "{ }", "Post Road", "B1", "NYS Department of Transportation", "24", "Yes", "Yes", "Located 1.5 Miles south on Route 9", "42.47574", "-73.68258", [ null, "42.47574", "-73.68258", null, false ], "112", "14", "2138" ]
+, [ "row-g7jm-vatu~fvr3", "00000000-0000-0000-576C-0C17A86787C2", 0, 1568671265, null, 1568671293, null, "{ }", "Rotterdam", "26", "NYS Department of Transportation", "57", "Yes", "Yes", "Located off Route 5", "42.8532", "-74.00697", [ null, "42.8532", "-74.00697", null, false ], "108", "50", "2142" ]
+, [ "row-cmmz~7pq5.fxc2", "00000000-0000-0000-11EC-327F52E0C3A2", 0, 1568671265, null, 1568671293, null, "{ }", "Amsterdam", "27", "NYS Thruway Authority", "91", "Yes", "Yes", "16-hour Parking Limit", "42.92455", "-74.20021", [ null, "42.92455", "-74.20021", null, false ], "497", "1143", "624" ]
+, [ "row-fzbm-i7pr.j23u", "00000000-0000-0000-4C84-0807867C835D", 0, 1568671265, null, 1568671293, null, "{ }", "Little Falls", "29A", "NYS Thruway Authority", "6", "Yes", "Yes", "16-hour Parking Limit", "43.01946", "-74.81862", [ null, "43.01946", "-74.81862", null, false ], "683", "570", "2088" ]
+, [ "row-jzfu-i498-7wub", "00000000-0000-0000-88BB-CF03F1B19E5B", 0, 1568671265, null, 1568671293, null, "{ }", "Herkimer", "30", "NYS Thruway Authority", "17", "Yes", "Yes", "16-hour Parking Limit", "43.01716", "-74.99466", [ null, "43.01716", "-74.99466", null, false ], "679", "559", "2088" ]
+, [ "row-dg73_bxgv.e6sd", "00000000-0000-0000-E9C5-02F22B22108F", 0, 1568671265, null, 1568671293, null, "{ }", "Utica", "31", "NYS Thruway Authority", "24", "Yes", "Yes", "16-hour Parking Limit", "43.11213", "-75.21065", [ null, "43.11213", "-75.21065", null, false ], "984", "1465", "625" ]
+, [ "row-eqmm.zkjt_xgnp", "00000000-0000-0000-311F-9D1F96B0D591", 0, 1568671265, null, 1568671293, null, "{ }", "Westmoreland", "32", "NYS Thruway Authority", "50", "Yes", "No", "16-hour Parking Limit", "43.12045", "-75.40194", [ null, "43.12045", "-75.40194", null, false ], "979", "1393", "625" ]
+, [ "row-49gm_5dmf~9w2s", "00000000-0000-0000-7A15-A8C397817A7E", 0, 1568671265, null, 1568671293, null, "{ }", "Verona", "33", "NYS Thruway Authority", "27", "Yes", "No", "16-hour Parking Limit", "43.12029", "-75.58679", [ null, "43.12029", "-75.58679", null, false ], "982", "1385", "625" ]
+, [ "row-sjmh.9zqu_be3s", "00000000-0000-0000-EE64-94D24FC5F443", 0, 1568671265, null, 1568671293, null, "{ }", "Canastota", "34", "NYS Thruway Authority", "60", "Yes", "No", "16-hour Parking Limit", "43.08893", "-75.74949", [ null, "43.08893", "-75.74949", null, false ], "136", "351", "2092" ]
+, [ "row-75zz~se9j-5aix", "00000000-0000-0000-6AE0-A743837A6E8C", 0, 1568671265, null, 1568671293, null, "{ }", "Collamer", "34A", "NYS Thruway Authority", "94", "Yes", "No", "16-hour Parking Limit", "43.0986", "-76.04788", [ null, "43.0986", "-76.04788", null, false ], "702", "426", "2132" ]
+, [ "row-97tu.jqwi_faha", "00000000-0000-0000-167E-D9BB980FAD60", 0, 1568671265, null, 1568671293, null, "{ }", "Mattydale", "36", "NYS Thruway Authority", "12", "Yes", "No", "1-Hour Parking Limit", "43.09531", "-76.16428", [ null, "43.09531", "-76.16428", null, false ], "690", "730", "2132" ]
+, [ "row-pg48~8kfr_3j6k", "00000000-0000-0000-FB03-8AE0F98D3866", 0, 1568671265, null, 1568671293, null, "{ }", "Liverpool", "38", "NYS Thruway Authority", "36", "Yes", "No", "16-hour Parking Limit", "43.11427", "-76.21399", [ null, "43.11427", "-76.21399", null, false ], "690", "637", "2132" ]
+, [ "row-83k7.y84i_5csp", "00000000-0000-0000-ED4A-2EF99F8538B3", 0, 1568671265, null, 1568671293, null, "{ }", "Syracuse (State Fair)", "39", "NYS Department of Transportation", "50", "Yes", "Yes", "16-hour Parking Limit", "43.1109", "-76.29029", [ null, "43.1109", "-76.29029", null, false ], "685", "727", "2132" ]
+, [ "row-btjs~ipcg.w7jf", "00000000-0000-0000-4EDF-564B0D93C384", 0, 1568671265, null, 1568671293, null, "{ }", "Weedsport", "40", "NYS Department of Transportation", "40", "Yes", "Yes", "16-hour Parking Limit", "43.05885", "-76.55943", [ null, "43.05885", "-76.55943", null, false ], "85", "702", "618" ]
+, [ "row-gn8g-f7vx-x64z", "00000000-0000-0000-ED33-C0C504F90E8E", 0, 1568671265, null, 1568671293, null, "{ }", "Geneva", "42", "NYS Department of Transportation", "50", "No", "No", "Located on Rt. 14.  Parking lot is unlined.", "42.94946", "-76.97677", [ null, "42.94946", "-76.97677", null, false ], "803", "370", "2133" ]
+, [ "row-66gt-d66n_drci", "00000000-0000-0000-02FB-C3EB7C952316", 0, 1568671265, null, 1568671293, null, "{ }", "Manchester", "43", "NYS Thruway Authority", "28", "Yes", "Highmast lighting nearby", "16-hour Parking Limit", "42.97686", "-77.22779", [ null, "42.97686", "-77.22779", null, false ], "805", "405", "2133" ]
+, [ "row-ajbz~y2b8.46zt", "00000000-0000-0000-B30A-344CD34880F2", 0, 1568671265, null, 1568671293, null, "{ }", "Canandaigua", "44", "NYS Department of Transportation", "92", "Yes", "Yes", null, "42.98765", "-77.36303", [ null, "42.98765", "-77.36303", null, false ], "810", "179", "2133" ]
+, [ "row-36t2-pqn7.rwex", "00000000-0000-0000-B053-B5F5BB1A6588", 0, 1568671265, null, 1568671293, null, "{ }", "LeRoy", "47", "NYS Department of Transportation", "110", "Yes", "Yes", "Located on I-490 E - Exit 1; 0.2 miles.  Trailways, shelter and pay phone.", "43.0333", "-77.96705", [ null, "43.0333", "-77.96705", null, false ], "787", "311", "2086" ]
+, [ "row-jtzn~h6qq~ntpq", "00000000-0000-0000-C0D2-9ACB85260A14", 0, 1568671265, null, 1568671293, null, "{ }", "Pembroke", "48A", "NYS Thruway Authority", "36", "Yes", "Yes", "16-hour Parking Limit", "43.00266", "-78.40682", [ null, "43.00266", "-78.40682", null, false ], "785", "500", "2086" ]
+, [ "row-vjcm.zp52~wwwm", "00000000-0000-0000-0FB5-DCE90C0E3B2E", 0, 1568671265, null, 1568671293, null, "{ }", "Depew", "49", "NYS Thruway Authority", "50", "Yes", "Yes", "16-hour Parking Limit", "42.94651", "-78.6977", [ null, "42.94651", "-78.6977", null, false ], "298", "160", "2041" ]
+, [ "row-jz2w~hp3t.62wg", "00000000-0000-0000-E357-AD55160CF4DF", 0, 1568671265, null, 1568671293, null, "{ }", "Williamsville", "50", "Niagara Frontier Transportation Authority", "50", "Yes", "Yes", "Located in the Village of Williamsville.  1.5 miles from I-90 - Exit 50. Directions: Exit 50 to I-290 West to Exit 7B, Route 5 East.  Turn right (Approx. 1/2 mile) at 3rd light to Union Road (Route 277). The lot is on the right.", "42.96059", "-78.75582", [ null, "42.96059", "-78.75582", null, false ], "304", "110", "2041" ]
+ ]
+}
