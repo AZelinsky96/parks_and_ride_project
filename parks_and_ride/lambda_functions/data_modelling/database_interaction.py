@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, ForeignKey, String, Float
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-
+from sqlalchemy.exc import DatabaseError
 from utils.lamb_utilities import read_file_from_bucket
 
 
@@ -11,7 +11,7 @@ Base = declarative_base()
 
 class LotInformation(Base):
     __tablename__ = "lot_information"
-    id = Column(Integer, primary_key = True, autoincrement=True)
+    id = Column(Integer, primary_key = True, autoincrement=True, nullable=False)
     title = Column(String(100))
     exit_ = Column(String(10))
     spaces = Column(String(15))
@@ -29,7 +29,7 @@ class LotInformation(Base):
 
 class FacilityInformation(Base):
     __tablename__ = "facility_information"
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     paved = Column(String(10))
     lighting = Column(String(25))
 
@@ -39,7 +39,7 @@ class FacilityInformation(Base):
 
 class OwnershipInformation(Base):
     __tablename__ = "ownership_information"
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     ownership = Column(String(100))
 
     def __repr__(self):
@@ -58,12 +58,19 @@ class DatabaseLoader:
         return Session()
     
     def session_upload(self):
+        session = None
         try:
             session = self.establish_session()
             self.model_data(session)
-        except:
+
+        except DatabaseError as e:
             session.rollback()
-            raise
+            raise e
+
+        except Exception as e:
+            if session:
+                session.rollback()
+            raise e
 
         finally:
             session.close()
@@ -71,48 +78,49 @@ class DatabaseLoader:
         return True
     
     def model_data(self, session):
+        try:
+            lot_information = []
+            for record in self.processed_data:
+                # The linking info collection contains data that when querying does not identfy as unique.
+                # This causes the system to insert duplicate records on data that is otherwise already present!
+                # Might be an issue related to float formatting. Might need to round float, for comments it may be related
+                # to cutoff on comments field. williamstown has a comment that is larger than 50 characters and is cutoff...
+                # TODO: dig into this.
 
-        facility_info = {}
-        ownership_info = {}
-        for record in self.processed_data:
-            facility_tup = tuple([record['paved'], record['lighted']])
-            if facility_tup not in facility_info:
-                facility_model = FacilityInformation(
-                    paved=facility_tup[0], lighting=facility_tup[1]
-                )
-                session.add(facility_model)
-                facility_info[facility_tup] = facility_model            
-            
-            ownership = record['runby']
-            if ownership not in ownership_info:
-                ownership_model = OwnershipInformation(
-                    ownership=ownership
-                )
-                session.add(ownership_model)
+                linking_info = {
+                    "latitude": record['latitude'],
+                    "longitude": record['longitude'],
+                    "comments": record['comments']
+                }
+                lot_record = self.get_or_create(
+                        session, 
+                        LotInformation,
+                        linking_info,           
+                        title=record['title'],
+                        facility_info=self.get_or_create(session, FacilityInformation, paved=record['paved'], lighting=record['lighted']),
+                        ownership_info=self.get_or_create(session, OwnershipInformation, ownership=record['runby']),
+                        exit_=record['exit'],
+                        spaces=record['spaces'],
+                    )
+                lot_information.append(lot_record)
 
-                ownership_info[ownership] = ownership_model
+            session.commit()
+            return lot_information
 
-        session.commit()
-        
-        lot_information = [
-            LotInformation(
-                title=record['title'],
-                exit_=record['exit'],
-                spaces=record['spaces'],
-                comments=record['comments'],
-                latitude=record['latitude'],
-                longitude=record['longitude'],
-                facility_info = facility_info[tuple([record['paved'], record['lighted']])],
-                ownership_info = ownership_info[record['runby']]
-            ) for record in self.processed_data
-        ]
+        except Exception as e:
+            raise DatabaseError(f"Error occured while in session with DB. Error: {e}")
 
-        session.add_all(
-            lot_information
-        )
-        session.commit()
-        
-        return True
+    def get_or_create(self, session: object, model: object, appends: dict=None, **kwargs):
+        exists = session.query(model.id).filter_by(**kwargs).scalar() is not None
+        if exists:
+            model = session.query(model).filter_by(**kwargs).first()
+        else:
+            if appends:
+                model = model(**kwargs, **appends)
+            else:
+                model = model(**kwargs)
+        session.add(model)
+        return model
 
 
 class DatabaseConnection:
@@ -131,9 +139,3 @@ def load_to_database(processed_data, connection_details):
     # Base.metadata.create_all(database_loader.database.engine)
     database_loader.session_upload()
     return True
-
-
-
-
-
-
