@@ -424,6 +424,14 @@ xray = ["aws-xray-sdk (>=0.93,<0.96 || >0.96)"]
 
 [[package]]
 category = "main"
+description = "UNKNOWN"
+name = "mymodule"
+optional = false
+python-versions = "*"
+version = "1.0.0"
+
+[[package]]
+category = "main"
 description = "Python package for creating and manipulating graphs and networks"
 marker = "python_version >= \"3.5\""
 name = "networkx"
@@ -759,7 +767,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "jaraco.test (>=3.2.0)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
 [metadata]
-content-hash = "a57b1fcfa6154d276247ffce7f433c36d498a7a25495deb405a65938b6442e02"
+content-hash = "406452c0e03a21a33198807f8afa31a4316f285f624d9129672bb7c9ee9e150e"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -956,6 +964,9 @@ more-itertools = [
 moto = [
     {file = "moto-1.3.16-py2.py3-none-any.whl", hash = "sha256:f51903b6b532f6c887b111b3343f6925b77eef0505a914138d98290cf3526df9"},
     {file = "moto-1.3.16.tar.gz", hash = "sha256:6c686b1f117563391957ce47c2106bc3868783d59d0e004d2446dce875bec07f"},
+]
+mymodule = [
+    {file = "myModule-1.0.0.tar.gz", hash = "sha256:ad37b68f4b8d29f24ba9142c7f6ac715853686060b44d6ceec97f1dd1d637b6a"},
 ]
 networkx = [
     {file = "networkx-2.5-py3-none-any.whl", hash = "sha256:8c5812e9f798d37c50570d15c4a69d5710a18d77bafc903ee9c5fba7454c616c"},
