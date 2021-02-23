@@ -1,3 +1,5 @@
 *connection_details.py*
 *.zip
 my-deployment-packages
+__pycache__
+.~lock.*
