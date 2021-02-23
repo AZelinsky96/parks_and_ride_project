@@ -44,12 +44,14 @@ class DataHandler:
 
 
 class DataframeDataHandler(DataHandler):
+    VERIFIED_COLUMNS = ['title', 'exit', 'runby', 'spaces', 'paved', 'lighted', 'comments', 'latitude', 'longitude', 'location']
+    COLUMN_TO_DROP = "location"
 
     def format_data(self):
         work_parks_data = self.parks_data
         work_parks_data.columns = list(map(lambda x: x.lower().strip().replace(" ", ""), work_parks_data.columns))
-        self.validate_column_names(work_parks_data.columns)
-        work_parks_data.drop(['location'], axis=1, inplace=True)
+        self.validate_column_names(work_parks_data.columns, self.VERIFIED_COLUMNS)
+        work_parks_data = self.drop_column(work_parks_data, self.COLUMN_TO_DROP)
         for column in work_parks_data.columns:
             if work_parks_data[column].dtype == "object":
                 work_column = work_parks_data[column]
@@ -57,11 +59,13 @@ class DataframeDataHandler(DataHandler):
                 work_parks_data[column] = work_column.apply(lambda x: x.strip().lower().replace(" ", "_"))
         return work_parks_data
 
-    def validate_column_names(self, columns):
-        verified_columns = ['title', 'exit', 'runby', 'spaces', 'paved', 'lighted', 'comments', 'latitude', 'longitude', 'location']
+    def validate_column_names(self, columns, verified_columns):
         verification_result = [ValueError(f"Invalid Column: {column_value}") for column_value in columns if column_value not in verified_columns]
         if verification_result:
             raise ValueError(f"Invalid Columns Found: {verification_result}. Adjust csv if necessary.")
+
+    def drop_column(self, work_parks_data, column_to_drop):
+        return work_parks_data.drop([column_to_drop], axis=1)
 
 
 DATA_LOADERS = {
@@ -79,9 +83,9 @@ def handle_acquisition_setup(event):
     return file_type, streamed_file_object
 
 
-def determine_data_loader(file_type):
+def determine_data_loader(file_type, data_loaders):
     try:
-        return DATA_LOADERS[file_type]
+        return data_loaders[file_type]
     
     except KeyError:
         raise KeyError(f"Unsupported File Type: {file_type}")
@@ -96,7 +100,7 @@ def load_and_format_data(data_loader, streamed_file_object):
 
 
 def acquire_data(file_type, streamed_file_object):
-    data_loader = determine_data_loader(file_type)
+    data_loader = determine_data_loader(file_type, DATA_LOADERS)
     return load_and_format_data(data_loader, streamed_file_object)
 
 
