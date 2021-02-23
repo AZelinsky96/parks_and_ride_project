@@ -1,0 +1,1 @@
+poetry run pytest -v -s --ignore parks_and_ride/ 

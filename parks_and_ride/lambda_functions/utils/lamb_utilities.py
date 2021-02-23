@@ -18,7 +18,6 @@ def write_file_to_s3(bucket_name, s3_path, context):
     s3 = boto3.resource("s3")
     try:
         json_context = json.dumps(context)
-        # lambda_path = f"/tmp/{file_name}"
         s3.Bucket(bucket_name).put_object(Key=s3_path, Body=json_context)
         return bucket_name, s3_path
     except Exception as e:
@@ -56,4 +55,3 @@ def validate_attributes(**kwargs):
 
 def load_json(json_body):
     return json.load(json_body)
-
