@@ -1,10 +1,13 @@
+import os
+import sys
 import pandas as pd
 
+sys.path.append(os.path.join(os.getcwd(), "parks_and_ride", "lambda_functions"))
+
+from data_modelling.connection_details import ConnectionDetails
 from data_modelling.database_interaction import (
     LotInformation, DatabaseAccessor, DatabaseConnection
 )
-from data_modelling.connection_details import ConnectionDetails
-
 
 def format_models_for_graph_use(models):
     return pd.DataFrame(models)
