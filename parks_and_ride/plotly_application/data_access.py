@@ -6,4 +6,4 @@ from data_modelling.connection_details import ConnectionDetails
 
 def access_data():
     database_accessor = DatabaseAccessor(ConnectionDetails, DatabaseConnection)
-    database_accessor.load_data_models()
+    return database_accessor.load_data_models(LotInformation)

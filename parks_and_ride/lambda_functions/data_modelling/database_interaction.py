@@ -144,25 +144,31 @@ class DatabaseAccessor(DatabaseInteraction):
     def __init__(self, connection_details, database_connection):
         super().__init__(connection_details, database_connection)
 
-    def load_data_models(self):
+    def load_data_models(self, model_to_load):
         session = None
         try:
             session = self.establish_session()
-            self.load_model(session, LotInformation)
+            models = self.load_model(session, model_to_load)
         except Exception as e:
             raise e
+
         finally:
             if session:
                 session.close()
+
+        return models
 
     def load_model(self, session: object, model: object, query_parameters: dict= None):
         if query_parameters:
             loaded_models = session.query(model).filter_by(**query_parameters).all()
         else:
             loaded_models = session.query(model).all()
-       
-        for model in loaded_models:
-            print(model)
+
+        return self.format_models(loaded_models) if loaded_models else None
+
+    def format_models(self, models):
+        return [model.__dict__ for model in models]
+
 
 def load_to_database(processed_data, connection_details):
     database_loader = DatabaseLoader(processed_data, connection_details, DatabaseConnection)

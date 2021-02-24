@@ -10,4 +10,4 @@ MAPBOX_ACCESS_TOKEN = open(os.path.join(os.getcwd(), "mapbox_access_token")).rea
 
 
 
-access_data()
+print(access_data())
