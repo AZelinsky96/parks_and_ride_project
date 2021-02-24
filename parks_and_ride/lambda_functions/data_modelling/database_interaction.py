@@ -46,17 +46,33 @@ class OwnershipInformation(Base):
         return f"ID={self.id}, OwnershipInformation(ownership={self.ownership})>"
 
 
-class DatabaseLoader:
+class DatabaseConnection:
+
+    def __init__(self, connection_details: dict):
+        self.engine = self.create_engine(connection_details)
     
-    def __init__(self, processed_data: list, connection_details: dict, database_connection):
-        self.processed_data = processed_data
+    def create_engine(self, connection_details):
+        db_uri = connection_details["db_uri"]
+        extra_details = "extra_details" in connection_details
+        return create_engine(db_uri, **connection_details['extra_details']) if extra_details  else create_engine(db_uri)
+
+
+class DatabaseInteraction:
+    def __init__(self, connection_details: dict, database_connection: DatabaseConnection):
         self.database = database_connection(connection_details)
 
     def establish_session(self):
         Session = sessionmaker()
         Session.configure(bind = self.database.engine)
         return Session()
+
+
+class DatabaseLoader(DatabaseInteraction):
     
+    def __init__(self, processed_data: list, connection_details: dict, database_connection):
+        self.processed_data = processed_data
+        super().__init__(connection_details, database_connection)
+
     def session_upload(self):
         session = None
         try:
@@ -123,16 +139,30 @@ class DatabaseLoader:
         return model
 
 
-class DatabaseConnection:
+class DatabaseAccessor(DatabaseInteraction):
 
-    def __init__(self, connection_details: dict):
-        self.engine = self.create_engine(connection_details)
-    
-    def create_engine(self, connection_details):
-        db_uri = connection_details["db_uri"]
-        extra_details = "extra_details" in connection_details
-        return create_engine(db_uri, **connection_details['extra_details']) if extra_details  else create_engine(db_uri)
+    def __init__(self, connection_details, database_connection):
+        super().__init__(connection_details, database_connection)
 
+    def load_data_models(self):
+        session = None
+        try:
+            session = self.establish_session()
+            self.load_model(session, LotInformation)
+        except Exception as e:
+            raise e
+        finally:
+            if session:
+                session.close()
+
+    def load_model(self, session: object, model: object, query_parameters: dict= None):
+        if query_parameters:
+            loaded_models = session.query(model).filter_by(**query_parameters).all()
+        else:
+            loaded_models = session.query(model).all()
+       
+        for model in loaded_models:
+            print(model)
 
 def load_to_database(processed_data, connection_details):
     database_loader = DatabaseLoader(processed_data, connection_details, DatabaseConnection)

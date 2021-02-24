@@ -3,3 +3,4 @@
 my-deployment-packages
 __pycache__
 .~lock.*
+mapbox_access_token
