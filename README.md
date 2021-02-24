@@ -17,3 +17,5 @@
 
 
 TODO: Find better deployment methods for lambda functions. (Docker?? Ansible??)
+
+TODO: Once end to end solution is implemented: Expand data_access_layer to include more data sources(json, xml, excel, etc.)
