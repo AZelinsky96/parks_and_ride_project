@@ -56,27 +56,32 @@ class DatabaseConnection:
         extra_details = "extra_details" in connection_details
         return create_engine(db_uri, **connection_details['extra_details']) if extra_details  else create_engine(db_uri)
 
+    def create_connection(self):
+        self.connection = self.engine.connect()
+    
+    def close_connection(self):
+        self.connection.close()
+
+    def create_session(self):
+        Session = sessionmaker()
+        Session.configure(bind = self.engine)
+        return Session()
 
 class DatabaseInteraction:
     def __init__(self, connection_details: dict, database_connection: DatabaseConnection):
         self.database = database_connection(connection_details)
 
-    def establish_session(self):
-        Session = sessionmaker()
-        Session.configure(bind = self.database.engine)
-        return Session()
-
 
 class DatabaseLoader(DatabaseInteraction):
     
-    def __init__(self, processed_data: list, connection_details: dict, database_connection):
+    def __init__(self, processed_data: list, connection_details: dict, database_connection: DatabaseConnection):
         self.processed_data = processed_data
         super().__init__(connection_details, database_connection)
 
     def session_upload(self):
         session = None
         try:
-            session = self.establish_session()
+            session = self.database.create_session()
             self.model_data(session)
 
         except DatabaseError as e:
@@ -90,7 +95,7 @@ class DatabaseLoader(DatabaseInteraction):
 
         finally:
             session.close()
-        
+
         return True
     
     def model_data(self, session):
@@ -147,14 +152,13 @@ class DatabaseAccessor(DatabaseInteraction):
     def load_data_models(self, model_to_load):
         session = None
         try:
-            session = self.establish_session()
+            session = self.database.create_session()
             models = self.load_model(session, model_to_load)
         except Exception as e:
             raise e
-
+        
         finally:
-            if session:
-                session.close()
+            session.close()
 
         return models
 
@@ -164,10 +168,24 @@ class DatabaseAccessor(DatabaseInteraction):
         else:
             loaded_models = session.query(model).all()
 
-        return self.format_models(loaded_models) if loaded_models else None
+        return self.format_models(loaded_models, "facility_info", "ownership_info") if loaded_models else None
 
-    def format_models(self, models):
-        return [model.__dict__ for model in models]
+    def format_models(self, models, *args):
+        bad_strings = ["_sa_instance_state", "id"]
+        formatted_models = []
+        for model in models:
+            work_model = model.__dict__
+            if args:
+                for submodel in args:
+                    submodel_info = getattr(model, submodel).__dict__
+                    for key, value in submodel_info.items():
+                        if key not in bad_strings:
+                            work_model[key] = value
+            formatted_models.append(work_model)
+        return formatted_models
+
+    def retrieve_inner_model(self, model):
+        return model.__dict__
 
 
 def load_to_database(processed_data, connection_details):
