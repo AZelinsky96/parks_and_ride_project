@@ -95,6 +95,11 @@ class DatabaseLoader(DatabaseInteraction):
 
         finally:
             session.close()
+            # The ingestion takes place in a lambda function which can executed asynchronously but 
+            # the state of function has no bearing on application after finished executing.
+            # calling dispose to ensure that all connections are disposed of and closed on database side so
+            # as not to stretch resources and have useless open connection compounding with each lambda execution.
+            self.database.engine.dispose()
 
         return True
     
@@ -102,12 +107,6 @@ class DatabaseLoader(DatabaseInteraction):
         try:
             lot_information = []
             for record in self.processed_data:
-                # The linking info collection contains data that when querying does not identfy as unique.
-                # This causes the system to insert duplicate records on data that is otherwise already present!
-                # Might be an issue related to float formatting. Might need to round float, for comments it may be related
-                # to cutoff on comments field. williamstown has a comment that is larger than 50 characters and is cutoff...
-                # TODO: dig into this.
-
                 linking_info = {
                     "latitude": record['latitude'],
                     "longitude": record['longitude'],
