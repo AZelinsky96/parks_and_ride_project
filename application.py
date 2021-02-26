@@ -6,25 +6,23 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 
-from dashboard_utilities.figure_utils import set_color, update_figure
 from dash.dependencies import Input, Output
-
-
-sys.path.append(os.path.join(os.getcwd(), "parks_and_ride", "lambda_functions"))
-
-from data_modelling.connection_details import ConnectionDetails
-from data_modelling.database_interaction import (
+from parks_and_ride.dash_app.dashboard_utils.figure_utils import set_color, update_figure
+from parks_and_ride.dash_app.database.connection_details import ConnectionDetails
+from parks_and_ride.dash_app.database.database_interaction import (
     LotInformation, DatabaseAccessor, DatabaseConnection
 )
 
+
 MAPBOX_ACCESS_TOKEN = open(os.path.join(os.getcwd(), "mapbox_access_token")).read()
+
 
 database_accessor = DatabaseAccessor(ConnectionDetails, DatabaseConnection)
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+application = app.server
 
 app.layout= html.Div([
     html.Div([
@@ -60,7 +58,7 @@ app.layout= html.Div([
     dcc.Graph(id='live-update-graph'),
     dcc.Interval(
             id='interval-component',
-            interval=10*1000, # in milliseconds
+            interval=900*1000, #15 minutes in milliseconds
             n_intervals=0
     )
 ])
@@ -103,4 +101,4 @@ def create_figure(n):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    application.run(debug=True, port=8000)

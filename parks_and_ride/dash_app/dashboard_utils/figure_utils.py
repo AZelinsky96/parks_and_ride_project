@@ -1,7 +1,16 @@
 import os
+import pandas as pd
+
 import plotly.graph_objects as go
 
-from dashboard_utilities.data_access import access_data
+
+def format_models_for_graph_use(models):
+    return pd.DataFrame(models)
+    
+
+def access_data(database_accessor, model):
+    models = database_accessor.load_data_models(model)
+    return format_models_for_graph_use(models)
 
 
 def set_color(x):

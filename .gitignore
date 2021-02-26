@@ -5,3 +5,8 @@ __pycache__
 .~lock.*
 mapbox_access_token
 *.pem
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+parks_env
